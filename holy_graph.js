@@ -680,7 +680,7 @@ onInput("k", () => {
   if (isMuted == false) {
     playback.end(); // Mute all music
     isMuted = true; // Set the isMuted flag to true
-  }k
+  }
 })
 addText(              "Welcome to the Holy", { y: 5, color: color`7` });
 addText(              "Graph! Try your best", { y: 7, color: color`7` });
@@ -726,9 +726,9 @@ setPushables({
   [ player ]: []
 })
 
-onInput("s", () => {
-  getFirst(player).y += 1
-})
+// onInput("s", () => {
+//   getFirst(player).y += 1
+// })
 
 afterInput(() => {
   
