@@ -85,21 +85,21 @@ const left = "y"
 
 setLegend(
   [ player, bitmap`
+3333333333333333
+3333333333333333
+9999999999999999
+9999999999999999
+6666666666666666
+6666666666666666
+4444444444444444
+4444444444444444
+7777777777777777
+7777777777777777
+5555555555555555
+5555555555555555
+HHHHHHHHHHHHHHHH
+HHHHHHHHHHHHHHHH
 ................
-................
-.......000......
-.......0.0......
-......0..0......
-......0...0.0...
-....0003.30.0...
-....0.0...000...
-....0.05550.....
-......0...0.....
-.....0....0.....
-.....0...0......
-......000.......
-......0.0.......
-.....00.00......
 ................` ],
   [ blank, bitmap`
 2222222222222222
@@ -776,7 +776,7 @@ bbbbbbbbbbttbbbttlbbtttbbbttbbbbbbbbbbb
 bbbbbbbbbbtbbtttbbbbbbtttbblbbbbbbbbbbb
 bbbbbbbbbttbbtbbbbttbbbbtbbttbbbbbbbbbb
 bbbbbbbbbtbbttbbttttttbbttbbtbbbbbbbbbb
-bbbbbbbbttbbtbbbtbbbbtbbbtbbttbbbbbbbbb
+bbbbbbbbttbbpbbbtbbbbtbbbtbbttbbbbbbbbb
 bbbbbbbbtbbttbbttbbbbttbbttbbtbbbbbbbbb
 bbbbbbbttbbtbbbtbbttbbtbbbtbbttbbbbbbbb
 bbbbbbbttbbtbbbtbbttbbtbbbtbbttbbbbbbbb
@@ -859,6 +859,29 @@ onInput("a", () => {
   }
 })
 
+setBackground("t")
+
+setSolids([ player, bg ]);
+
+setPushables({
+  [player]: [lvl]
+});
+
+onInput("w", () => {
+  getFirst(player).y -= 1;
+});
+
+onInput("a", () => {
+  getFirst(player).x -= 1;
+});
+
+onInput("s", () => {
+  getFirst(player).y += 1; 
+});
+
+onInput("d", () => {
+  getFirst(player).x += 1;
+});
 
 let timeLeft = 10; // Set the initial time limit to 120 seconds
 
@@ -879,7 +902,54 @@ const timerInterval = setInterval(() => {
   }
 }, 1000); // Update timer every second
 
+afterInput(() => {
+  const targetNumber = tilesWith(lvl).length;
+  
+  const numberCovered = tilesWith(lvl).length;
 
+  // addText(numMoves.toString(), {
+  //   x: 1,
+  //   y: 14,
+  //   color: color`3`
+  // })
+
+  if (getFirst(player)=== targetNumber) {
+    playTune(winSFX);
+    level++;
+  }
+  if (numberCovered === 1) {
+    playTune(winSFX);
+    level++;
+  
+  //   clearText();
+    
+  //   addText(numMoves.toString(), {
+  //     x: 1,
+  //     y: 14,
+  //     color: color`3`
+    }
+    // )
+    
+    const currentLevel = levels[level];
+
+//     if (currentLevel !== undefined) {
+//       setMap(currentLevel);
+//       // Fun hack to start the level with a cheese already on a goal
+//       if (level == 3) { 
+//         addSprite(7, 3, "c")
+//       }
+//       if (level == 9) {
+//         addSprite(5, 4, "c")
+//       }
+//       if (level == 10) {
+//         clearText();
+//       }
+//     } else {
+//       clearText();
+//       addText("you win!", { y: 5, color: color`6` });
+//     }
+  // }
+})
 
 setMap(levels[level])
 
