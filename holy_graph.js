@@ -5,43 +5,44 @@ https://sprig.hackclub.com/gallery/getting_started
 @title: holy_graph
 @author: 
 @tags: []
-@addedOn: 2024-00-00
+@addedOn: 2025-03-30
 */
 const melody = tune`
-500: D4^500,
-500: C4~500 + D4~500,
-500: D4^500,
-500: D4~500 + C4~500,
-500: E4^500,
-500: D4-500,
-500: E4^500 + D4^500,
-500: D4-500,
-500: E4^500 + D4^500,
-500: D4-500,
-500: D4^500 + E4^500,
-500: D4-500 + C4-500,
-500: D4-500 + E4-500 + F4-500,
-500: E4-500,
-500: E4^500 + D4-500,
-500: C4-500,
-500: D4~500 + E4~500,
-500: E4^500,
-500: E4~500 + D4~500,
-500: F4^500,
-500: E4-500,
-500: F4^500 + E4^500,
-500: E4-500,
-500: F4^500 + E4^500,
-500: E4-500,
-500: F4^500 + E4^500,
-500: E4-500 + D4-500,
-500: E4-500 + F4-500 + G4-500,
-500: F4-500,
-500: E4-500 + F4^500,
-500: D4-500,
-500: C4-500`
+309.2783505154639: D4^309.2783505154639,
+309.2783505154639: C4~309.2783505154639 + D4~309.2783505154639 + A4~309.2783505154639,
+309.2783505154639: D4^309.2783505154639,
+309.2783505154639: D4~309.2783505154639 + C4~309.2783505154639,
+309.2783505154639: E4^309.2783505154639 + D5~309.2783505154639,
+309.2783505154639: D4-309.2783505154639 + C5~309.2783505154639,
+309.2783505154639: E4^309.2783505154639 + D4^309.2783505154639 + B4~309.2783505154639,
+309.2783505154639: D4-309.2783505154639 + C5~309.2783505154639,
+309.2783505154639: E4^309.2783505154639 + D4^309.2783505154639 + D5~309.2783505154639,
+309.2783505154639: D4-309.2783505154639,
+309.2783505154639: D4^309.2783505154639 + E4^309.2783505154639,
+309.2783505154639: C4-309.2783505154639 + E5~309.2783505154639,
+309.2783505154639: D4-309.2783505154639 + E5~309.2783505154639,
+309.2783505154639: E4-309.2783505154639,
+309.2783505154639: E4^309.2783505154639 + D4-309.2783505154639,
+309.2783505154639: C4-309.2783505154639,
+309.2783505154639: D4~309.2783505154639 + E4~309.2783505154639 + E5~309.2783505154639 + B4~309.2783505154639,
+309.2783505154639: E4^309.2783505154639 + B4~309.2783505154639,
+309.2783505154639: E4~309.2783505154639 + D4~309.2783505154639,
+309.2783505154639: F4^309.2783505154639,
+309.2783505154639: E4-309.2783505154639 + E5~309.2783505154639,
+309.2783505154639: F4^309.2783505154639 + E4^309.2783505154639,
+309.2783505154639: E4-309.2783505154639,
+309.2783505154639: F4^309.2783505154639 + E4^309.2783505154639,
+309.2783505154639: E4-309.2783505154639 + A5~309.2783505154639,
+309.2783505154639: F4^309.2783505154639 + E4^309.2783505154639 + G5~309.2783505154639,
+309.2783505154639: E4-309.2783505154639 + D4-309.2783505154639 + F5~309.2783505154639,
+309.2783505154639: E4-309.2783505154639 + F4-309.2783505154639 + G4-309.2783505154639 + F5~309.2783505154639,
+309.2783505154639: F4-309.2783505154639 + E5~309.2783505154639,
+309.2783505154639: E4-309.2783505154639 + F4^309.2783505154639 + D5~309.2783505154639,
+309.2783505154639: D4-309.2783505154639 + C5~309.2783505154639,
+309.2783505154639: C4-309.2783505154639 + C5~309.2783505154639`
 const playback = playTune(melody, Infinity)
 
+const student = "s"
 const player = "p"
 const track = "t"
 const bg = "b"
@@ -77,7 +78,7 @@ const blue_square = "p"
 const green_square = "g"
 const red_square = "e"
 const rocket = "r"
-const spaceship = "s"
+// const spaceship = "s"
 const up = "u"
 const right = "z"
 const left = "y"
@@ -85,6 +86,23 @@ const left = "y"
 
 setLegend(
   [ player, bitmap`
+3333333333333333
+3333333333333333
+9999999999999999
+9999999999999999
+6666666666666666
+6666666666666666
+4444444444444444
+4444444444444444
+7777777777777777
+7777777777777777
+5555555555555555
+5555555555555555
+HHHHHHHHHHHHHHHH
+HHHHHHHHHHHHHHHH
+................
+................` ],
+  [ student, bitmap`
 3333333333333333
 3333333333333333
 9999999999999999
@@ -679,24 +697,24 @@ HHHHHHHHHHHHHHHH
 28222222222222282
 28888888888888882
 22222222222222222`],
-  [spaceship, bitmap`
-22222222222222222
-23333333333333332
-23233333233333232
-23323333233332332
-23332333233323332
-23333233233233332
-23333323232333332
-23333332223333332
-23222222322222232
-23333332223333332
-23333323232333332
-23333233233233332
-23332333233323332
-23323333233332332
-23233333233333232
-23333333333333332
-22222222222222222`],
+//   [spaceship, bitmap`
+// 22222222222222222
+// 23333333333333332
+// 23233333233333232
+// 23323333233332332
+// 23332333233323332
+// 23333233233233332
+// 23333323232333332
+// 23333332223333332
+// 23222222322222232
+// 23333332223333332
+// 23333323232333332
+// 23333233233233332
+// 23332333233323332
+// 23323333233332332
+// 23233333233333232
+// 23333333333333332
+// 22222222222222222`],
   [up, bitmap`
 22222222222222222
 22222222222222222
@@ -756,9 +774,8 @@ HHHHHHHHHHHHHHHH
 setSolids([])
 
 /*
-Level 0 = Welcome screen
-Level 1 = Help screen
-Level 2 = First game screen
+Level 0 = Welcome & help screen
+Level 2 = Game screen
 Level 3 = Game
 Level 4 = Blackhole
 */
@@ -776,14 +793,14 @@ bbbbbbbbbbttbbbttlbbtttbbbttbbbbbbbbbbb
 bbbbbbbbbbtbbtttbbbbbbtttbblbbbbbbbbbbb
 bbbbbbbbbttbbtbbbbttbbbbtbbttbbbbbbbbbb
 bbbbbbbbbtbbttbbttttttbbttbbtbbbbbbbbbb
-bbbbbbbbttbbpbbbtbbbbtbbbtbbttbbbbbbbbb
+bbbbbbbbttbbpbbblbbbbtbbbtbbttbbbbbbbbb
 bbbbbbbbtbbttbbttbbbbttbbttbbtbbbbbbbbb
-bbbbbbbttbbtbbbtbbttbbtbbbtbbttbbbbbbbb
-bbbbbbbttbbtbbbtbbttbbtbbbtbbttbbbbbbbb
+bbbbbbbttbbtbbbtbbttbblbbbtbbttbbbbbbbb
+bbbbbbbttbbtbbbtbbltbbtbbbtbbttbbbbbbbb
 bbbbbbbbtbbttbbttbbbbttbbttbbtbbbbbbbbb
 bbbbbbbbttbbtlbbtbbbbtbbblbbttbbbbbbbbb
 bbbbbbbbbtbbttbbttttttbbttbbttbbbbbbbbb
-bbbbbbbbbttbbtbbbbttbbbbtbbttbbbbbbbbbb
+bbbbbbbbbttbbtbbbbtlbbbbtbbttbbbbbbbbbb
 bbbbbbbbbblbbtttbbbbbbtttbbtbbbbbbbbbbb
 bbbbbbbbbbttbbbtttbbtttbbbttbbbbbbbbbbb
 bbbbbbbbbbbtttbbbttttbbbttlbbbbbbbbbbbb
@@ -793,25 +810,35 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`,
     map`
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbttttttttbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbtttbbbbbbtttbbbbbbbbbbbbbb
-bbbbbbbbbbbtltbbbttttbbbtttbbbbbbbbbbbb
-bbbbbbbbbbttbbbttlbbtttbbbttbbbbbbbbbbb
-bbbbbbbbbbtbbtttbbbbbbtttbblbbbbbbbbbbb
-bbbbbbbbbttbbtbbbbttbbbbtbbttbbbbbbbbbb
-bbbbbbbbbtbbttbbttttttbbttbbtbbbbbbbbbb
-bbbbbbbbttbbtbbbtbbbbtbbbtbbttbbbbbbbbb
-bbbbbbbbtbbttbbttbbbbttbbttbbtbbbbbbbbb
-bbbbbbbttbbtbbbtbbttbbtbbbtbbttbbbbbbbb
-bbbbbbbttbbtbbbtbbttbbtbbbtbbttbbbbbbbb
-bbbbbbbbtbbttbbttbbbbttbbttbbtbbbbbbbbb
-bbbbbbbbttbbtlbbtbbbbtbbblbbttbbbbbbbbb
-bbbbbbbbbtbbttbbttttttbbttbbttbbbbbbbbb
-bbbbbbbbbttbbtbbbbttbbbbtbbttbbbbbbbbbb
-bbbbbbbbbblbbtttbbbbbbtttbbtbbbbbbbbbbb
-bbbbbbbbbbttbbbtttbbtttbbbttbbbbbbbbbbb
-bbbbbbbbbbbtttbbbttttbbbttlbbbbbbbbbbbb
-bbbbbbbbbbbbbtttbbbbbbtttbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbttttttttbbbbbbbbbbbbbbbb
+bbbbbbbbbbbtltttbbbbbbtttltbbbbbbbbbbbb
+bbbbbbbbbtttbbbbbttttbbbbbtttbbbbbbbbbb
+bbbbbbbtttbbbttttlbbtttttbbbtttbbbbbbbb
+bbbbbbttbbbtttbbbbbbbbbbtttbbbttbbbbbbb
+bbbbbbtbbttlbbbttttttttbbbtttbbtbbbbbbb
+bbbbbttbttbbbtttbbbbbbtttbbbltbttbbbbbb
+bbbbbtbbtbbtltbbbttttbbbtttbbtbbtbbbbbb
+bbbbttbttbttbbbttlbbtttbbbttbttbttbbbbb
+bbbbtbbtbbtbbtttbbbbbbtttbblbbtbbtbbbbb
+bbbttbttbttbbtbbbbttbbbbtbbttbttbttbbbb
+bbbtbblbbtbbttbbttttttbbttbbtbbtbbtbbbb
+bbbtbttbttbbtbbblbbbbtbbbtbbttbttbtbbbb
+bbttbtbbtbbttbbttbbbbttbbttbbtbbtbttbbb
+bbltbtbttbbtbbbtbbttbblbbbtbbttbtbtlbbb
+bbttbtbttbbtbbbtbbltbbtbbbtbbttbtbttbbb
+bbttbtbbtbbttbbttbbbbttbbttbbtbbtbttbbb
+bbbtbttbttbbtlbbtbbbbtbbblbbttbttbtbbbb
+bbbtbbtbbtbbttbbttttttbbttbbtbbtbbtbbbb
+bbbttbttbttbbtbbbbtlbbbbtbbttbtlbttbbbb
+bbbbtbbtbblbbtttbbbbbbtttbbtbbtbbtbbbbb
+bbbbttbttbttbbbtttbbtttbbbttbttbttbbbbb
+bbbbbtbbtbbtttbbbttttbbbttlbbtbbtbbbbbb
+bbbbbttbttbbbtttbbbbbbtttbbbttbttbbbbbb
+bbbbbbtbblttbbbttttttttbbbtttbbtbbbbbbb
+bbbbbbttbbbtttbbbbbbbbbbttlbbbttbbbbbbb
+bbbbbbbtttbbbtttttbbtttttbbbtttbbbbbbbb
+bbbbbbbbbtttbbbbbttttbbbbbtttbbbbbbbbbb
+bbbbbbbbbbbtttttbbbbbbtttttbbbbbbbbbbbb
+bbbbbbbbbbbbbbbttttltttbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`, 
     map`
 .............
@@ -846,44 +873,63 @@ onInput("k", () => {
 addText(              "Welcome to the Holy", { y: 5, color: color`7` });
 addText(              "Graph! Try your best", { y: 7, color: color`7` });
 addText(              "to finish the core!", { y: 9, color: color`7` });
-addText(              "Press \"a\" to start", { y: 14, color: color`7` });
+addText(              "Press \"a\" to start", { y: 12, color: color`7` });
+addText(              "Press \"i\" for help", { y: 14, color: color`7` });
 
+onInput("i", () => {
+  if (start_game == false) {
+    start_game = true;
+    clearText();
+    addText(              "Collect all the ", { y: 5, color: color`7` });
+    addText(              "projects from the", { y: 7, color: color`7` });
+    addText(              "current circle", { y: 9, color: color`7` });
+    addText(              "before", { y: 11, color: color`7` });
+    addText(              "you get blackholed!", { y: 11, color: color`7` });
+    addText(              "Press \"k\" to mute music", { y: 13, color: color`7` });
+    addText(              "Press \"a\" to start", { y: 14, color: color`7` });
+    setMap(levels[level])
+  }
+})
 let start_game = false
 
 onInput("a", () => {
   if (start_game == false) {
-    start_game = true; // Set the isMuted flag to true
-    level = 1
+    start_game = true;
+    level = 2
     clearText();
     setMap(levels[level])
+    // Spawn a new player sprite at position (0, 0)
+    addSprite(20, 15, student);
   }
 })
 
+
+
 setBackground("t")
 
-setSolids([ player, bg ]);
+setSolids([ student, bg ]);
 
 setPushables({
-  [player]: [lvl]
+  [student]: [lvl]
 });
 
 onInput("w", () => {
-  getFirst(player).y -= 1;
+  getFirst(student).y -= 1;
 });
 
 onInput("a", () => {
-  getFirst(player).x -= 1;
+  getFirst(student).x -= 1;
 });
 
 onInput("s", () => {
-  getFirst(player).y += 1; 
+  getFirst(student).y += 1; 
 });
 
 onInput("d", () => {
-  getFirst(player).x += 1;
+  getFirst(student).x += 1;
 });
 
-let timeLeft = 10; // Set the initial time limit to 120 seconds
+let timeLeft = 120; // Set the initial time limit to 120 seconds
 
 // Display the time left on the screen
 
@@ -902,65 +948,71 @@ const timerInterval = setInterval(() => {
   }
 }, 1000); // Update timer every second
 
-afterInput(() => {
-  const targetNumber = tilesWith(lvl).length;
+// afterInput(() => {
+//   const targetNumber = tilesWith(lvl).length;
   
-  const numberCovered = tilesWith(lvl).length;
+//   const numberCovered = tilesWith(lvl).length;
 
-  // addText(numMoves.toString(), {
-  //   x: 1,
-  //   y: 14,
-  //   color: color`3`
-  // })
+//   // addText(numMoves.toString(), {
+//   //   x: 1,
+//   //   y: 14,
+//   //   color: color`3`
+//   // })
 
-  if (getFirst(player)=== targetNumber) {
-    playTune(winSFX);
-    level++;
-  }
-  if (numberCovered === 1) {
-    playTune(winSFX);
-    level++;
+//   if (getFirst(player)=== targetNumber) {
+//     playTune(winSFX);
+//     level++;
+//   }
+//   if (numberCovered === 1) {
+//     playTune(winSFX);
+//     level++;
   
-  //   clearText();
+//   //   clearText();
     
-  //   addText(numMoves.toString(), {
-  //     x: 1,
-  //     y: 14,
-  //     color: color`3`
-    }
-    // )
-    
-    const currentLevel = levels[level];
-
-//     if (currentLevel !== undefined) {
-//       setMap(currentLevel);
-//       // Fun hack to start the level with a cheese already on a goal
-//       if (level == 3) { 
-//         addSprite(7, 3, "c")
-//       }
-//       if (level == 9) {
-//         addSprite(5, 4, "c")
-//       }
-//       if (level == 10) {
-//         clearText();
-//       }
-//     } else {
-//       clearText();
-//       addText("you win!", { y: 5, color: color`6` });
+//   //   addText(numMoves.toString(), {
+//   //     x: 1,
+//   //     y: 14,
+//   //     color: color`3`
 //     }
-  // }
-})
+//     // )
+    
+//     const currentLevel = levels[level];
+
+// //     if (currentLevel !== undefined) {
+// //       setMap(currentLevel);
+// //       // Fun hack to start the level with a cheese already on a goal
+// //       if (level == 3) { 
+// //         addSprite(7, 3, "c")
+// //       }
+// //       if (level == 9) {
+// //         addSprite(5, 4, "c")
+// //       }
+// //       if (level == 10) {
+// //         clearText();
+// //       }
+// //     } else {
+// //       clearText();
+// //       addText("you win!", { y: 5, color: color`6` });
+// //     }
+//   // }
+// })
 
 setMap(levels[level])
 
 setPushables({
-  [ player ]: []
+  [ student ]: []
 })
 
-// onInput("s", () => {
-//   getFirst(player).y += 1
-// })
+let all_collected = 0
 
 afterInput(() => {
+  const playerSprite = getFirst(student)
+  const playerX = playerSprite.x
+  const playerY = playerSprite.y
+  const touchedproject = getTile(playerX, playerY).some(sprite => sprite.type === lvl)
+  if (touchedproject) {
+    all_collected += 1;
+    addText(`projects done: ${all_collected}`, { x: 3, y: 1, color: color`2` })
+    }
   
 })
