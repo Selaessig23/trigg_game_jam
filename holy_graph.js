@@ -7,40 +7,6 @@ https://sprig.hackclub.com/gallery/getting_started
 @tags: [#awesome, #42, #bestgameintheworld]
 @addedOn: 2025-03-30
 */
-const melody = tune`
-309.2783505154639: D4^309.2783505154639,
-309.2783505154639: C4~309.2783505154639 + D4~309.2783505154639 + A4~309.2783505154639,
-309.2783505154639: D4^309.2783505154639,
-309.2783505154639: D4~309.2783505154639 + C4~309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + D5~309.2783505154639,
-309.2783505154639: D4-309.2783505154639 + C5~309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + D4^309.2783505154639 + B4~309.2783505154639,
-309.2783505154639: D4-309.2783505154639 + C5~309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + D4^309.2783505154639 + D5~309.2783505154639,
-309.2783505154639: D4-309.2783505154639,
-309.2783505154639: D4^309.2783505154639 + E4^309.2783505154639,
-309.2783505154639: C4-309.2783505154639 + E5~309.2783505154639,
-309.2783505154639: D4-309.2783505154639 + E5~309.2783505154639,
-309.2783505154639: E4-309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + D4-309.2783505154639,
-309.2783505154639: C4-309.2783505154639,
-309.2783505154639: D4~309.2783505154639 + E4~309.2783505154639 + E5~309.2783505154639 + B4~309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + B4~309.2783505154639,
-309.2783505154639: E4~309.2783505154639 + D4~309.2783505154639,
-309.2783505154639: F4^309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + E5~309.2783505154639,
-309.2783505154639: F4^309.2783505154639 + E4^309.2783505154639,
-309.2783505154639: E4-309.2783505154639,
-309.2783505154639: F4^309.2783505154639 + E4^309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + A5~309.2783505154639,
-309.2783505154639: F4^309.2783505154639 + E4^309.2783505154639 + G5~309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + D4-309.2783505154639 + F5~309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + F4-309.2783505154639 + G4-309.2783505154639 + F5~309.2783505154639,
-309.2783505154639: F4-309.2783505154639 + E5~309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + F4^309.2783505154639 + D5~309.2783505154639,
-309.2783505154639: D4-309.2783505154639 + C5~309.2783505154639,
-309.2783505154639: C4-309.2783505154639 + C5~309.2783505154639`
-const playback = playTune(melody, Infinity)
 
 const student = "s"
 const track = "t"
@@ -605,22 +571,22 @@ HHHHHHHHHHHHHHHH
 0003333333333000
 0000000000000000`],
   [blue_square, bitmap`
-22222222222222222
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-27777777777777772
-22222222222222222`],
+77777777777777777
+77777777777777777
+77777777777777777
+77777777777777777
+77777777777777777
+77777222222277777
+77777222222277777
+77777222722277777
+77777227772277777
+77777222722277777
+77777222222277777
+77777222222277777
+77777777777777777
+77777777777777777
+77777777777777777
+77777777777777777`],
 );
 
 setSolids([])
@@ -636,29 +602,6 @@ let level = 0
 const levels = [
   map`
 bbbbbbbbbbbbbbbbbbbbbbbb`, 
-  map`
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbttttttttbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbtttbbbbbbtttbbbbbbbbbbbbbb
-bbbbbbbbbbbtltbbbttttbbbtttbbbbbbbbbbbb
-bbbbbbbbbbttbbbttlbbtttbbbttbbbbbbbbbbb
-bbbbbbbbbbtbbtttbbbbbbtttbblbbbbbbbbbbb
-bbbbbbbbbttbbtbbbbttbbbbtbbttbbbbbbbbbb
-bbbbbbbbbtbbttbbttttttbbttbbtbbbbbbbbbb
-bbbbbbbbttbbpbbblbbbbtbbbtbbttbbbbbbbbb
-bbbbbbbbtbbttbbttbbbbttbbttbbtbbbbbbbbb
-bbbbbbbttbbtbbbtbbttbblbbbtbbttbbbbbbbb
-bbbbbbbttbbtbbbtbbltbbtbbbtbbttbbbbbbbb
-bbbbbbbbtbbttbbttbbbbttbbttbbtbbbbbbbbb
-bbbbbbbbttbbtlbbtbbbbtbbblbbttbbbbbbbbb
-bbbbbbbbbtbbttbbttttttbbttbbttbbbbbbbbb
-bbbbbbbbbttbbtbbbbtlbbbbtbbttbbbbbbbbbb
-bbbbbbbbbblbbtttbbbbbbtttbbtbbbbbbbbbbb
-bbbbbbbbbbttbbbtttbbtttbbbttbbbbbbbbbbb
-bbbbbbbbbbbtttbbbttttbbbttlbbbbbbbbbbbb
-bbbbbbbbbbbbbtttbbbbbbtttbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbttttttttbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`, 
     map`
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbttttttttbbbbbbbbbbbbbbbb
@@ -692,18 +635,6 @@ bbbbbbbbbtttbbbbbttttbbbbbtttbbbbbbbbbb
 bbbbbbbbbbbtttttbbbbbbtttttbbbbbbbbbbbb
 bbbbbbbbbbbbbbbttttltttbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`, 
-    map`
-.............
-wwwwwwrwwwwww
-wwwwwwtwwwwww
-wwwwwwewwwwww
-wwwwwwtwwwwww
-wwwwwwgwwwwww
-wwwwwwtwwwwww
-wwwwwwgwwwwww
-wwwwwwswwwwww
-wwwwwwwwwwwww
-.............`, 
   map`
 bbbbbbbbbbbbbbbb
 bbYOUbVEbBEENbbb
@@ -717,8 +648,7 @@ bbbbbbbbbbbbbbbb`,
 let isMuted = false; // Variable to track if any melody is muted
 
 onInput("k", () => {
-  if (isMuted == false) {
-    playback.end(); // Mute all music
+  if (isMuted === false) {
     isMuted = true; // Set the isMuted flag to true
   }
 })
@@ -743,9 +673,9 @@ onInput("i", () => {
 let start_game = false;
 
 onInput("l", () => {
-  if (start_game == false) {
+  if (start_game === false) {
     start_game = true;
-    level = 2
+    level = 1
     clearText();
     setMap(levels[level])
     addSprite(19, 15, student);
@@ -779,7 +709,7 @@ let position_x = 0
 let position_y = 0
 let daysLeft = 120; 
 const timerInterval = setInterval(() => {
-  if (level == 2 && all_collected < 23) {
+  if (level === 1 && all_collected < 23) {
     daysLeft -= 1;
     clearText();
     addText(`Days Left: ${daysLeft+1}`, { x: 3, y: 1, color: color`3` })
@@ -808,95 +738,25 @@ afterInput(() => {
     addSprite(position_x, position_y, "s");
     addSprite(position_x, position_y, "p");
     if (all_collected === 1) {
-        getFirst(student).x -= 3;
+        // getFirst(student).x -= 3;
+      setMap(levels[level])
+      addSprite(15, 15, student);
       }
     if (all_collected === 4) {
-        if (position_x === 16 && position_y === 13) //ok
-        {
-        getFirst(student).y -= 0; 
-        getFirst(student).x -= 4;
-        }
-        else if (position_x === 22 && position_y === 15) //ok
-        {
-        getFirst(student).x += 4;
-        }
-        else if (position_x === 19 && position_y === 20) //ok
-        {
-        getFirst(student).y -= 0; 
-        getFirst(student).x += 5;
-        }
+      setMap(levels[level])
+      addSprite(11, 15, student);
       }
     if (all_collected === 7) {
-        if (position_x === 25 && position_y === 18) //ok
-        {
-        getFirst(student).y -= 0; 
-        getFirst(student).x += 4;
-        }
-        else if (position_x === 13 && position_y === 18) //ok
-        {
-        getFirst(student).y += 0; 
-        getFirst(student).x -= 5;
-        }
-        else if (position_x === 17 && position_y === 9) //ok
-        {
-        getFirst(student).y -= 3; 
-        }
+      setMap(levels[level])
+      addSprite(8, 15, student);
       }
     if (all_collected === 11) {
-        if (position_x === 10 && position_y === 21) //ok
-        {
-        getFirst(student).y -= 1; 
-        getFirst(student).x -= 3;
-        }
-        else if (position_x === 26 && position_y === 23) //ok
-        {
-        getFirst(student).y -= 1; 
-        getFirst(student).x += 3;
-        }
-        else if (position_x === 27 && position_y === 10) //ok
-        {
-        getFirst(student).y -= 0; 
-        getFirst(student).x += 3;
-        }
-       else if (position_x === 16 && position_y === 6) //corrected
-        {
-        getFirst(student).y -= 2; 
-        getFirst(student).x -= 2;
-        }
+      setMap(levels[level])
+      addSprite(5, 15, student);
       }
     if (all_collected === 18) {
-        if (position_x === 9 && position_y === 25) //ok
-        {
-        getFirst(student).x -= 3;
-        }
-        else if (position_x === 26 && position_y === 26) //ok
-        {
-        getFirst(student).y -= 2; 
-        }
-        else if (position_x === 31 && position_y === 20) //ok
-        {
-        getFirst(student).y -= 0; 
-        getFirst(student).x += 3;
-        }
-        else if (position_x === 28 && position_y === 7) //ok
-        {
-        getFirst(student).y -= 0; 
-        getFirst(student).x += 3;
-        }
-        else if (position_x === 17 && position_y === 4) //ok
-        {
-        getFirst(student).y -= 2;
-        getFirst(student).x -= 8;
-        }
-        else if (position_x === 11 && position_y === 6) //ok
-        {
-        getFirst(student).y -= 3; 
-        }
-        else if (position_x === 6 && position_y === 12) //ok
-        {
-        getFirst(student).y -= 1; 
-        getFirst(student).x -= 3;
-        }
+      setMap(levels[level])
+      addSprite(3, 15, student);
       }
     console.log("Player Position - X:", getFirst(student).x, "Y:", getFirst(student).y);
       if (all_collected === 23) {
