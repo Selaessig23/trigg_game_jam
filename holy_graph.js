@@ -724,7 +724,7 @@ onInput("d", () => {
 let all_collected = 0
 let position_x = 0
 let position_y = 0
-let daysLeft = 120; 
+let daysLeft = 100; 
 const timerInterval = setInterval(() => {
   if (level === 1 && all_collected < 23) {
     daysLeft -= 1;
@@ -779,7 +779,7 @@ afterInput(() => {
       if (all_collected === 23) {
         level = 0;
         setMap(levels[level])
-        addText(`Brilliant, \nwhat a fun,\nyou passed\nthecore\nyou're an expert!`, { x: 1, y: 6, color: color`4` }) 
+        addText(`Brilliant, \nwhat a fun,\nyou passed\nthe core\nyou're an expert!`, { x: 1, y: 6, color: color`4` }) 
       }
       else {
         addText(`projects done: ${all_collected}`, { x: 3, y: 14, color: color`2` })
