@@ -1004,6 +1004,8 @@ setPushables({
 })
 
 let all_collected = 0
+let position_x = 0
+let position_y = 0
 
 afterInput(() => {
   const playerSprite = getFirst(student)
@@ -1012,7 +1014,35 @@ afterInput(() => {
   const touchedproject = getTile(playerX, playerY).some(sprite => sprite.type === lvl)
   if (touchedproject) {
     all_collected += 1;
-    addText(`projects done: ${all_collected}`, { x: 3, y: 1, color: color`2` })
+    position_x = getFirst(student).x;
+    position_y = getFirst(student).y;
+    if (all_collected == 1) {
+      // getFirst(student).y -= 10; 
+      getFirst(student).x -= 3;
+      // clearText();
+      }
+    if (all_collected == 4) {
+     if (position_x === 16 && position_y === 13)
+     {
+      getFirst(student).y -= 0; 
+      getFirst(student).x -= 5;
+     }
+      else if (position_x === 24 && position_y === 20)
+      {
+      getFirst(student).y += 4; 
+      getFirst(student).x += 0;
+      // clearText();
+      }
+      else if (position_x === 19 && position_y === 20)
+      {
+      getFirst(student).y -= 0; 
+      getFirst(student).x += 5;
+      // clearText();
+      }
+    }
+    // addText(`projects done: ${all_collected}`, { x: 3, y: 1, color: color`2` })
+    addText(`p pos x: ${position_x}`, { x: 1, y: 8, color: color`2` })
+    addText(`p pos y: ${position_y}`, { x: 1, y: 10, color: color`2` })
     }
   
 })
