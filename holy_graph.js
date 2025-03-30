@@ -884,8 +884,6 @@ addText(              "Press \"l\" to start", { y: 11, color: color`7` });
 addText(              "Press \"i\" for help", { y: 13, color: color`7` });
 
 onInput("i", () => {
-  if (start_game == false) {
-    start_game = true;
     clearText();
     addText(              "Collect all the ", { y: 1, color: color`7` });
     addText(              "projects from the", { y: 3, color: color`7` });
@@ -895,8 +893,6 @@ onInput("i", () => {
     addText(              "Press \"k\" to mute", { y: 12, color: color`7` });
     // addText(              "mute music \\ ", { y: 13, color: color`7` });
     addText(              "Press \"l\" to start", { y: 14, color: color`7` });
-    setMap(levels[level])
-  }
 })
 let start_game = false;
 
@@ -907,6 +903,7 @@ onInput("l", () => {
     clearText();
     setMap(levels[level])
     // Spawn a new player sprite at position (0, 0)
+    
     addSprite(19, 15, student);
   }
 })
@@ -1011,17 +1008,17 @@ setMap(levels[level])
 setPushables({
   [ student ]: []
 })
-
+// let counter = 0;
 
 afterInput(() => {
-  // if (level === 2) {
-  const playerSprite = getFirst(student)
-  const playerX = playerSprite.x
-  const playerY = playerSprite.y
+
   // const allLevels = getAll(lvl);
   //   for (const fruit of fruitsInGame) {
   //     if (fruit.x === playerSprite.x && fruit.y === playerSprite.y) {
-  
+  if (start_game === true) {
+  const playerSprite = getFirst(student)
+  const playerX = playerSprite.x
+  const playerY = playerSprite.y
   const touchedproject = getTile(playerX, playerY).some(sprite => sprite.type === lvl)
   if (touchedproject) {
     all_collected += 1;
@@ -1161,4 +1158,5 @@ console.log("Player Position - X:", getFirst(student).x, "Y:", getFirst(student)
     // addText(`p pos y: ${position_y}`, { x: 1, y: 10, color: color`2` })
     }
   // }
+  }
 })
