@@ -814,9 +814,9 @@ bbbbbbbbbbbtltttbbbbbbtttltbbbbbbbbbbbb
 bbbbbbbbbtttbbbbbttttbbbbbtttbbbbbbbbbb
 bbbbbbbtttbbbttttlbbtttttbbbtttbbbbbbbb
 bbbbbbttbbbtttbbbbbbbbbbtttbbbttbbbbbbb
-bbbbbbtbbttlbbbttttttttbbbtttbbtbbbbbbb
+bbbbbbtbbttlbbbtlttttttbbbtttbbtbbbbbbb
 bbbbbttbttbbbtttbbbbbbtttbbbltbttbbbbbb
-bbbbbtbbtbbtltbbbttttbbbtttbbtbbtbbbbbb
+bbbbbtbbtbbtttbbbttttbbbtttbbtbbtbbbbbb
 bbbbttbttbttbbbttlbbtttbbbttbttbttbbbbb
 bbbbtbbtbbtbbtttbbbbbbtttbblbbtbbtbbbbb
 bbbttbttbttbbtbbbbttbbbbtbbttbttbttbbbb
@@ -869,41 +869,47 @@ onInput("k", () => {
     playback.end(); // Mute all music
     isMuted = true; // Set the isMuted flag to true
   }
+  // else if (isMuted == true) {
+  //   // playback(); // Unmute all music
+  //   playTune(melody, Infinity);
+  //   // const playback = playTune(melody, Infinity);
+  //   isMuted = false; // Set the isMuted flag to false
+  // }
 })
-addText(              "Welcome to the Holy", { y: 5, color: color`7` });
-addText(              "Graph! Try your best", { y: 7, color: color`7` });
-addText(              "to finish the core!", { y: 9, color: color`7` });
-addText(              "Press \"a\" to start", { y: 12, color: color`7` });
-addText(              "Press \"i\" for help", { y: 14, color: color`7` });
+
+addText(              "Welcome to the Holy", { y: 3, color: color`7` });
+addText(              "Graph! Try your best", { y: 5, color: color`7` });
+addText(              "to finish the core!", { y: 7, color: color`7` });
+addText(              "Press \"l\" to start", { y: 11, color: color`7` });
+addText(              "Press \"i\" for help", { y: 13, color: color`7` });
 
 onInput("i", () => {
   if (start_game == false) {
     start_game = true;
     clearText();
-    addText(              "Collect all the ", { y: 5, color: color`7` });
-    addText(              "projects from the", { y: 7, color: color`7` });
-    addText(              "current circle", { y: 9, color: color`7` });
-    addText(              "before", { y: 11, color: color`7` });
-    addText(              "you get blackholed!", { y: 11, color: color`7` });
-    addText(              "Press \"k\" to mute music", { y: 13, color: color`7` });
-    addText(              "Press \"a\" to start", { y: 14, color: color`7` });
+    addText(              "Collect all the ", { y: 1, color: color`7` });
+    addText(              "projects from the", { y: 3, color: color`7` });
+    addText(              "current circle", { y: 5, color: color`7` });
+    addText(              "before", { y: 7, color: color`7` });
+    addText(              "you get blackholed!", { y: 9, color: color`7` });
+    addText(              "Press \"k\" to mute", { y: 12, color: color`7` });
+    // addText(              "mute music \\ ", { y: 13, color: color`7` });
+    addText(              "Press \"l\" to start", { y: 14, color: color`7` });
     setMap(levels[level])
   }
 })
-let start_game = false
+let start_game = false;
 
-onInput("a", () => {
-  if (start_game == false) {
-    start_game = true;
-    level = 2
-    clearText();
-    setMap(levels[level])
-    // Spawn a new player sprite at position (0, 0)
-    addSprite(20, 15, student);
-  }
-})
-
-
+// onInput("l", () => {
+//   if (start_game == false) {
+//     start_game = true;
+//     level = 2
+//     clearText();
+//     setMap(levels[level])
+//     // Spawn a new player sprite at position (0, 0)
+//     addSprite(19, 15, student);
+//   }
+// })
 
 setBackground("t")
 
@@ -929,6 +935,9 @@ onInput("d", () => {
   getFirst(student).x += 1;
 });
 
+let all_collected = 0
+let position_x = 0
+let position_y = 0
 let timeLeft = 120; // Set the initial time limit to 120 seconds
 
 // Display the time left on the screen
@@ -936,11 +945,11 @@ let timeLeft = 120; // Set the initial time limit to 120 seconds
 // Function to update timer every second
 const timerInterval = setInterval(() => {
   // Check if the level is 0 and set the timer to 120
-  if (level == 1) {
+  if (level == 2 && all_collected < 23) {
     timeLeft -= 1; // Decrement time left by 1 second
     // Update the displayed time
     clearText();
-    addText(`Days Left: ${timeLeft+1}`, { x: 3, y: 1, color: color`2` })
+    addText(`Days Left: ${timeLeft+1}`, { x: 3, y: 1, color: color`3` })
   }
   if (timeLeft < 0 && level < 4) {
     level = 4; // Set level to 4 if time runs out before reaching level 2
@@ -1003,11 +1012,20 @@ setPushables({
   [ student ]: []
 })
 
-let all_collected = 0
-let position_x = 0
-let position_y = 0
 
-afterInput(() => {
+onInput("l", () => {
+  if (start_game == false) {
+    start_game = true;
+    level = 2
+    clearText();
+    setMap(levels[level])
+    // Spawn a new player sprite at position (0, 0)
+    addSprite(19, 15, student);
+  }
+  
+// })
+// afterInput(() => {
+  // if (level === 2) {
   const playerSprite = getFirst(student)
   const playerX = playerSprite.x
   const playerY = playerSprite.y
@@ -1033,18 +1051,18 @@ afterInput(() => {
       // clearText();
       }
     if (all_collected === 4) {
-     if (position_x === 16 && position_y === 13)
+     if (position_x === 16 && position_y === 13) //ok
      {
       getFirst(student).y -= 0; 
       getFirst(student).x -= 4;
      }
-      else if (position_x === 22 && position_y === 15)
+      else if (position_x === 22 && position_y === 15) //ok
       {
-      getFirst(student).y += 4; 
-      getFirst(student).x += 0;
+      // getFirst(student).y += 4; 
+      getFirst(student).x += 4;
       // clearText();
       }
-      else if (position_x === 19 && position_y === 20)
+      else if (position_x === 19 && position_y === 20) //ok
       {
       getFirst(student).y -= 0; 
       getFirst(student).x += 5;
@@ -1052,95 +1070,106 @@ afterInput(() => {
       }
       }
     if (all_collected === 7) {
-     if (position_x === 25 && position_y === 18)
+     if (position_x === 25 && position_y === 18) //ok
      {
       getFirst(student).y -= 0; 
       getFirst(student).x += 4;
      }
-      else if (position_x === 13 && position_y === 18)
-      {
+     else if (position_x === 13 && position_y === 18) //ok
+     {
       getFirst(student).y += 0; 
       getFirst(student).x -= 5;
       // clearText();
-      }
-      else if (position_x === 17 && position_y === 98)
+     }
+     else if (position_x === 17 && position_y === 9) //ok
       {
-      getFirst(student).y -= 0; 
-      getFirst(student).x += 5;
+      getFirst(student).y -= 3; 
+      // console.log("Sprites at new position:", getTile(studentSprite.x, studentSprite.y));
+      // getFirst(student).x -= 7;
       // clearText();
       }
       }
     if (all_collected === 11) {
-     if (position_x === 10 && position_y === 21)
+     if (position_x === 10 && position_y === 21) //ok
      {
       getFirst(student).y -= 1; 
       getFirst(student).x -= 3;
      }
-      else if (position_x === 26 && position_y === 23)
+      else if (position_x === 26 && position_y === 23) //ok
       {
       getFirst(student).y -= 1; 
       getFirst(student).x += 3;
       // clearText();
       }
-      else if (position_x === 27 && position_y === 10)
+      else if (position_x === 27 && position_y === 10) //ok
       {
       getFirst(student).y -= 0; 
       getFirst(student).x += 3;
       // clearText();
       }
-      else if (position_x === 12 && position_y === 80)
+      else if (position_x === 16 && position_y === 6) //corrected
       {
-      getFirst(student).y += 1; 
-      getFirst(student).x -= 4;
+      getFirst(student).y -= 2; 
+      getFirst(student).x -= 2;
       // clearText();
       }
       }
     if (all_collected === 18) {
-     if (position_x === 90 && position_y === 25)
+     if (position_x === 9 && position_y === 25) //ok
      {
       // getFirst(student).y -= 1; 
       getFirst(student).x -= 3;
      }
-      else if (position_x === 26 && position_y === 26)
+      else if (position_x === 26 && position_y === 26) //ok
       {
       getFirst(student).y -= 2; 
       // getFirst(student).x -= 3;
       // clearText();
       }
-      else if (position_x === 31 && position_y === 20)
+      else if (position_x === 31 && position_y === 20) //ok
       {
       getFirst(student).y -= 0; 
       getFirst(student).x += 3;
       // clearText();
       }
-      else if (position_x === 28 && position_y === 70)
+      else if (position_x === 28 && position_y === 7) //ok
       {
       getFirst(student).y -= 0; 
       getFirst(student).x += 3;
       // clearText();
       }
-      else if (position_x === 17 && position_y === 40)
+      else if (position_x === 17 && position_y === 4) //ok
       {
-      getFirst(student).y += 3; 
+      getFirst(student).y -= 2;
+      getFirst(student).x -= 2;
+      // clearText();
+      }
+      else if (position_x === 11 && position_y === 6) //ok
+      {
+      getFirst(student).y -= 3; 
       // getFirst(student).x += 3;
       // clearText();
       }
-      else if (position_x === 11 && position_y === 60)
+      else if (position_x === 6 && position_y === 12) //ok
       {
-      getFirst(student).y += 3; 
-      // getFirst(student).x += 3;
-      // clearText();
-      }
-      else if (position_x === 61 && position_y === 12)
-      {
-      // getFirst(student).y -= 0; 
+      getFirst(student).y -= 1; 
       getFirst(student).x -= 3;
       // clearText();
       }
       }
-    addText(`projects done: ${all_collected}`, { x: 3, y: 1, color: color`2` })
-    addText(`p pos x: ${position_x}`, { x: 1, y: 8, color: color`2` })
-    addText(`p pos y: ${position_y}`, { x: 1, y: 10, color: color`2` })
+    
+    // Log the current position of the player sprite
+console.log("Player Position - X:", getFirst(student).x, "Y:", getFirst(student).y);
+    if (all_collected === 23) {
+      level = 0;
+      setMap(levels[level])
+       addText(`Brilliant, \nwhat a fun,\n you're expert!`, { x: 1, y: 6, color: color`4` }) 
     }
-  
+    else {
+    addText(`projects done: ${all_collected} of 23`, { x: 1, y: 14, color: color`2` })
+    }
+    // addText(`p pos x: ${position_x}`, { x: 1, y: 8, color: color`2` })
+    // addText(`p pos y: ${position_y}`, { x: 1, y: 10, color: color`2` })
+    }
+  // }
 })
