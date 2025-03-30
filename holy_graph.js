@@ -85,7 +85,7 @@ const left = "y"
 
 
 setLegend(
-  [ player, bitmap`
+  [ student, bitmap`
 3333333333333333
 3333333333333333
 9999999999999999
@@ -102,7 +102,7 @@ HHHHHHHHHHHHHHHH
 HHHHHHHHHHHHHHHH
 ................
 ................` ],
-  [ student, bitmap`
+  [ player, bitmap`
 3333333333333333
 3333333333333333
 9999999999999999
@@ -1011,23 +1011,34 @@ afterInput(() => {
   const playerSprite = getFirst(student)
   const playerX = playerSprite.x
   const playerY = playerSprite.y
+  // const allLevels = getAll(lvl);
+  //   for (const fruit of fruitsInGame) {
+  //     if (fruit.x === playerSprite.x && fruit.y === playerSprite.y) {
+  
   const touchedproject = getTile(playerX, playerY).some(sprite => sprite.type === lvl)
   if (touchedproject) {
     all_collected += 1;
+    // lvl.remove();
+    
+    // removeSprite(touchedProject);
     position_x = getFirst(student).x;
     position_y = getFirst(student).y;
-    if (all_collected == 1) {
+    clearTile(position_x, position_y);
+    addSprite(position_x, position_y, "s");
+    addSprite(position_x, position_y, "p");
+    
+    if (all_collected === 1) {
       // getFirst(student).y -= 10; 
       getFirst(student).x -= 3;
       // clearText();
       }
-    if (all_collected == 4) {
+    if (all_collected === 4) {
      if (position_x === 16 && position_y === 13)
      {
       getFirst(student).y -= 0; 
-      getFirst(student).x -= 5;
+      getFirst(student).x -= 4;
      }
-      else if (position_x === 24 && position_y === 20)
+      else if (position_x === 22 && position_y === 15)
       {
       getFirst(student).y += 4; 
       getFirst(student).x += 0;
@@ -1039,8 +1050,95 @@ afterInput(() => {
       getFirst(student).x += 5;
       // clearText();
       }
-    }
-    // addText(`projects done: ${all_collected}`, { x: 3, y: 1, color: color`2` })
+      }
+    if (all_collected === 7) {
+     if (position_x === 25 && position_y === 18)
+     {
+      getFirst(student).y -= 0; 
+      getFirst(student).x += 4;
+     }
+      else if (position_x === 13 && position_y === 18)
+      {
+      getFirst(student).y += 0; 
+      getFirst(student).x -= 5;
+      // clearText();
+      }
+      else if (position_x === 17 && position_y === 98)
+      {
+      getFirst(student).y -= 0; 
+      getFirst(student).x += 5;
+      // clearText();
+      }
+      }
+    if (all_collected === 11) {
+     if (position_x === 10 && position_y === 21)
+     {
+      getFirst(student).y -= 1; 
+      getFirst(student).x -= 3;
+     }
+      else if (position_x === 26 && position_y === 23)
+      {
+      getFirst(student).y -= 1; 
+      getFirst(student).x += 3;
+      // clearText();
+      }
+      else if (position_x === 27 && position_y === 10)
+      {
+      getFirst(student).y -= 0; 
+      getFirst(student).x += 3;
+      // clearText();
+      }
+      else if (position_x === 12 && position_y === 80)
+      {
+      getFirst(student).y += 1; 
+      getFirst(student).x -= 4;
+      // clearText();
+      }
+      }
+    if (all_collected === 18) {
+     if (position_x === 90 && position_y === 25)
+     {
+      // getFirst(student).y -= 1; 
+      getFirst(student).x -= 3;
+     }
+      else if (position_x === 26 && position_y === 26)
+      {
+      getFirst(student).y -= 2; 
+      // getFirst(student).x -= 3;
+      // clearText();
+      }
+      else if (position_x === 31 && position_y === 20)
+      {
+      getFirst(student).y -= 0; 
+      getFirst(student).x += 3;
+      // clearText();
+      }
+      else if (position_x === 28 && position_y === 70)
+      {
+      getFirst(student).y -= 0; 
+      getFirst(student).x += 3;
+      // clearText();
+      }
+      else if (position_x === 17 && position_y === 40)
+      {
+      getFirst(student).y += 3; 
+      // getFirst(student).x += 3;
+      // clearText();
+      }
+      else if (position_x === 11 && position_y === 60)
+      {
+      getFirst(student).y += 3; 
+      // getFirst(student).x += 3;
+      // clearText();
+      }
+      else if (position_x === 61 && position_y === 12)
+      {
+      // getFirst(student).y -= 0; 
+      getFirst(student).x -= 3;
+      // clearText();
+      }
+      }
+    addText(`projects done: ${all_collected}`, { x: 3, y: 1, color: color`2` })
     addText(`p pos x: ${position_x}`, { x: 1, y: 8, color: color`2` })
     addText(`p pos y: ${position_y}`, { x: 1, y: 10, color: color`2` })
     }
