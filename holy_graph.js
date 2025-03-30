@@ -1130,7 +1130,7 @@ afterInput(() => {
       else if (position_x === 17 && position_y === 4) //ok
       {
       getFirst(student).y -= 2;
-      getFirst(student).x -= 2;
+      getFirst(student).x -= 8;
       // clearText();
       }
       else if (position_x === 11 && position_y === 6) //ok
@@ -1152,10 +1152,10 @@ console.log("Player Position - X:", getFirst(student).x, "Y:", getFirst(student)
     if (all_collected === 23) {
       level = 0;
       setMap(levels[level])
-       addText(`Brilliant, \nwhat a fun,\n you're expert!`, { x: 1, y: 6, color: color`4` }) 
+       addText(`Brilliant, \nwhat a fun,\nyou passed\nthecore\nyou're an expert!`, { x: 1, y: 6, color: color`4` }) 
     }
     else {
-    addText(`projects done: ${all_collected} of 23`, { x: 1, y: 14, color: color`2` })
+    addText(`projects done: ${all_collected}`, { x: 3, y: 14, color: color`2` })
     }
     // addText(`p pos x: ${position_x}`, { x: 1, y: 8, color: color`2` })
     // addText(`p pos y: ${position_y}`, { x: 1, y: 10, color: color`2` })
