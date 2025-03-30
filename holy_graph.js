@@ -7,7 +7,7 @@ https://sprig.hackclub.com/gallery/getting_started
 @tags: [#awesome, #42, #bestgameintheworld]
 @addedOn: 2025-03-30
 */
-
+const player = "p"
 const student = "s"
 const track = "t"
 const bg = "b"
@@ -43,6 +43,23 @@ const blue_square = "p"
 
 
 setLegend(
+    [ player, bitmap`
+3333333333333333
+3333333333333333
+9999999999999999
+9999999999999999
+6666666666666666
+6666666666666666
+4444444444444444
+4444444444444444
+7777777777777777
+7777777777777777
+5555555555555555
+5555555555555555
+HHHHHHHHHHHHHHHH
+HHHHHHHHHHHHHHHH
+................
+................` ],
   [ student, bitmap`
 3333333333333333
 3333333333333333
@@ -714,8 +731,8 @@ const timerInterval = setInterval(() => {
     clearText();
     addText(`Days Left: ${daysLeft+1}`, { x: 3, y: 1, color: color`3` })
   }
-  if (daysLeft < 0 && level < 4) {
-    level = 4;
+  if (daysLeft < 0 && level < 2) {
+    level = 2;
     setMap(levels[level]);
   }
 }, 1000);
@@ -758,7 +775,7 @@ afterInput(() => {
       setMap(levels[level])
       addSprite(3, 15, student);
       }
-    console.log("Player Position - X:", getFirst(student).x, "Y:", getFirst(student).y);
+    // console.log("Player Position - X:", getFirst(student).x, "Y:", getFirst(student).y);
       if (all_collected === 23) {
         level = 0;
         setMap(levels[level])
