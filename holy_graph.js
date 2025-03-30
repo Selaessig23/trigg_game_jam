@@ -900,16 +900,16 @@ onInput("i", () => {
 })
 let start_game = false;
 
-// onInput("l", () => {
-//   if (start_game == false) {
-//     start_game = true;
-//     level = 2
-//     clearText();
-//     setMap(levels[level])
-//     // Spawn a new player sprite at position (0, 0)
-//     addSprite(19, 15, student);
-//   }
-// })
+onInput("l", () => {
+  if (start_game == false) {
+    start_game = true;
+    level = 2
+    clearText();
+    setMap(levels[level])
+    // Spawn a new player sprite at position (0, 0)
+    addSprite(19, 15, student);
+  }
+})
 
 setBackground("t")
 
@@ -1013,18 +1013,7 @@ setPushables({
 })
 
 
-onInput("l", () => {
-  if (start_game == false) {
-    start_game = true;
-    level = 2
-    clearText();
-    setMap(levels[level])
-    // Spawn a new player sprite at position (0, 0)
-    addSprite(19, 15, student);
-  }
-  
-// })
-// afterInput(() => {
+afterInput(() => {
   // if (level === 2) {
   const playerSprite = getFirst(student)
   const playerX = playerSprite.x
