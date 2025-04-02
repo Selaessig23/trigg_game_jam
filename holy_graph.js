@@ -742,7 +742,7 @@ setSolids([])
 Level 0 = Welcome & help screen
 Level 1 = Game screen 1
 Level 2 = Blackhole screen
-Level 3 = last-level-announcement screen
+Level 3 = last-level-announcement & win screen
 Level 4 = Game screen 2
 */
 
@@ -838,9 +838,9 @@ onInput("i", () => {
     addText(              "Rocket to ", { y: 1, color: color`7` });
     addText(              "starship", { y: 3, color: color`7` });
     addText(              "", { y: 5, color: color`7` });
-    addText(              "before", { y: 7, color: color`7` });
-    addText(              "you get blackholed!", { y: 9, color: color`7` });
-    addText(              "Press \"k\" to mute", { y: 12, color: color`7` });
+    addText(              "Just press w", { y: 7, color: color`7` });
+    addText(              "otherwise", { y: 9, color: color`7` });
+    addText(              "you get blackholed!", { y: 11, color: color`7` });
     // addText(              "mute music \\ ", { y: 13, color: color`7` });
     addText(              "Press \"l\" to start", { y: 14, color: color`7` });
   }
@@ -879,6 +879,9 @@ onInput("w", () => {
   if (start_game === true) {
   getFirst(student).y -= 1;
   }
+  else if (start_game2 === true) {
+    won = true;
+  }
 });
 
 onInput("a", () => {
@@ -903,9 +906,21 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function example() {
+async function example(ms, text) {
     console.log("Start");
-    await sleep(5000); // Sleep for 5 seconds
+    await sleep(ms); // Sleep for 5 seconds
+    if (text === true && level === 3) {
+    addText(`And now show what\nyou have learned...`, { x: 1, y: 8, color: color`8` })
+    addText(              "Press \"i\" for help", { y: 13, color: color`6` });
+    addText(              "Press \"l\" to start", { y: 14, color: color`6` });
+    }
+    else if (text === false && won === true) {
+      level = 3; 
+      setMap(levels[level])
+      if (won === true) {
+        addText(`Brilliant,\nyou passed\nthe core\nyou're an expert!\n`, { x: 1, y: 4, color: color`4` })
+      }
+    }
     console.log("End");
 }
 
@@ -998,30 +1013,29 @@ afterInput(() => {
       clearTile(position_x, position_y);
       addSprite(position_x, position_y, "p");
       addSprite(position_x, position_y, "s");
+      addText(`projects done: ${all_collected}`, { x: 3, y: 14, color: color`2` })
     }
   }
     // console.log("Player Position - X:", getFirst(student).x, "Y:", getFirst(student).y);
       if (all_collected === 4) {
         level = 3;
         setMap(levels[level])
-        addText(`Brilliant, \nwhat a fun,\nNow show what you\nhave learned...`, { x: 1, y: 4, color: color`8` })
-        addText(              "Press \"i\" for help", { y: 13, color: color`6` });
-        addText(              "Press \"l\" to start", { y: 14, color: color`6` });
+        addText(`Brilliant, \nwhat a fun,\n...`, { x: 1, y: 4, color: color`8` })
+        example(5000, true);
+        // addText(`Now show what you\nhave learned...`, { x: 1, y: 7, color: color`8` })
+        // addText(              "Press \"i\" for help", { y: 13, color: color`6` });
+        // addText(              "Press \"l\" to start", { y: 14, color: color`6` });
         start_game = false;
+        daysLeft = 60;
       }
-      else {
-        addText(`projects done: ${all_collected}`, { x: 3, y: 14, color: color`2` })
-      }
+      // else {
+      //   addText(`projects done: ${all_collected}`, { x: 3, y: 14, color: color`2` })
+      // }
   }
     else if (start_game2 === true) {   
         // level = 4;
         // setMap(levels[level])
-        daysLeft = 60;
         // start_game2 = true;
-        example();
-        won = true;
-        if (won === true) {
-        addText(`Brilliant,\nyou passed\nthe core\nyou're an expert!\n`, { x: 1, y: 4, color: color`4` })
-        }
+        example(10000, false);
       }
 })
