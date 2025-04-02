@@ -3,47 +3,12 @@ First time? Check out the tutorial game:
 https://sprig.hackclub.com/gallery/getting_started
 
 @title: holy_graph
-@author: 
-@tags: []
+@author: M & M Game studio mstracke and maweiss
+@tags: [#awesome, #42, #bestgameintheworld]
 @addedOn: 2025-03-30
 */
-const melody = tune`
-309.2783505154639: D4^309.2783505154639,
-309.2783505154639: C4~309.2783505154639 + D4~309.2783505154639 + A4~309.2783505154639,
-309.2783505154639: D4^309.2783505154639,
-309.2783505154639: D4~309.2783505154639 + C4~309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + D5~309.2783505154639,
-309.2783505154639: D4-309.2783505154639 + C5~309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + D4^309.2783505154639 + B4~309.2783505154639,
-309.2783505154639: D4-309.2783505154639 + C5~309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + D4^309.2783505154639 + D5~309.2783505154639,
-309.2783505154639: D4-309.2783505154639,
-309.2783505154639: D4^309.2783505154639 + E4^309.2783505154639,
-309.2783505154639: C4-309.2783505154639 + E5~309.2783505154639,
-309.2783505154639: D4-309.2783505154639 + E5~309.2783505154639,
-309.2783505154639: E4-309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + D4-309.2783505154639,
-309.2783505154639: C4-309.2783505154639,
-309.2783505154639: D4~309.2783505154639 + E4~309.2783505154639 + E5~309.2783505154639 + B4~309.2783505154639,
-309.2783505154639: E4^309.2783505154639 + B4~309.2783505154639,
-309.2783505154639: E4~309.2783505154639 + D4~309.2783505154639,
-309.2783505154639: F4^309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + E5~309.2783505154639,
-309.2783505154639: F4^309.2783505154639 + E4^309.2783505154639,
-309.2783505154639: E4-309.2783505154639,
-309.2783505154639: F4^309.2783505154639 + E4^309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + A5~309.2783505154639,
-309.2783505154639: F4^309.2783505154639 + E4^309.2783505154639 + G5~309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + D4-309.2783505154639 + F5~309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + F4-309.2783505154639 + G4-309.2783505154639 + F5~309.2783505154639,
-309.2783505154639: F4-309.2783505154639 + E5~309.2783505154639,
-309.2783505154639: E4-309.2783505154639 + F4^309.2783505154639 + D5~309.2783505154639,
-309.2783505154639: D4-309.2783505154639 + C5~309.2783505154639,
-309.2783505154639: C4-309.2783505154639 + C5~309.2783505154639`
-const playback = playTune(melody, Infinity)
-
-const student = "s"
 const player = "p"
+const student = "s"
 const track = "t"
 const bg = "b"
 const lvl = "l"
@@ -74,18 +39,18 @@ const letterW = "W"
 const letterX = "X"
 const letterY = "Y"
 const letterZ = "Z"
-const blue_square = "p"
+const blue_square = "q"
 const green_square = "g"
 const red_square = "e"
 const rocket = "r"
-// const spaceship = "s"
+const spaceship = "x"
 const up = "u"
 const right = "z"
 const left = "y"
 
 
 setLegend(
-  [ student, bitmap`
+    [ player, bitmap`
 3333333333333333
 3333333333333333
 9999999999999999
@@ -102,7 +67,7 @@ HHHHHHHHHHHHHHHH
 HHHHHHHHHHHHHHHH
 ................
 ................` ],
-  [ player, bitmap`
+  [ student, bitmap`
 3333333333333333
 3333333333333333
 9999999999999999
@@ -629,7 +594,7 @@ HHHHHHHHHHHHHHHH
 0003333333333000
 0003333333333000
 0000000000000000`],
-  [blue_square, bitmap`
+    [blue_square, bitmap`
 22222222222222222
 27777777777777772
 27777777777777772
@@ -697,24 +662,24 @@ HHHHHHHHHHHHHHHH
 28222222222222282
 28888888888888882
 22222222222222222`],
-//   [spaceship, bitmap`
-// 22222222222222222
-// 23333333333333332
-// 23233333233333232
-// 23323333233332332
-// 23332333233323332
-// 23333233233233332
-// 23333323232333332
-// 23333332223333332
-// 23222222322222232
-// 23333332223333332
-// 23333323232333332
-// 23333233233233332
-// 23332333233323332
-// 23323333233332332
-// 23233333233333232
-// 23333333333333332
-// 22222222222222222`],
+  [spaceship, bitmap`
+22222222222222222
+23333333333333332
+23233333233333232
+23323333233332332
+23332333233323332
+23333233233233332
+23333323232333332
+23333332223333332
+23222222322222232
+23333332223333332
+23333323232333332
+23333233233233332
+23332333233323332
+23323333233332332
+23233333233333232
+23333333333333332
+22222222222222222`],
   [up, bitmap`
 22222222222222222
 22222222222222222
@@ -775,9 +740,10 @@ setSolids([])
 
 /*
 Level 0 = Welcome & help screen
-Level 2 = Game screen
-Level 3 = Game
-Level 4 = Blackhole
+Level 1 = Game screen 1
+Level 2 = Blackhole screen
+Level 3 = last-level-announcement screen
+Level 4 = Game screen 2
 */
 
 let level = 0
@@ -785,29 +751,6 @@ const levels = [
   map`
 bbbbbbbbbbbbbbbbbbbbbbbb`, 
   map`
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbttttttttbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbtttbbbbbbtttbbbbbbbbbbbbbb
-bbbbbbbbbbbtltbbbttttbbbtttbbbbbbbbbbbb
-bbbbbbbbbbttbbbttlbbtttbbbttbbbbbbbbbbb
-bbbbbbbbbbtbbtttbbbbbbtttbblbbbbbbbbbbb
-bbbbbbbbbttbbtbbbbttbbbbtbbttbbbbbbbbbb
-bbbbbbbbbtbbttbbttttttbbttbbtbbbbbbbbbb
-bbbbbbbbttbbpbbblbbbbtbbbtbbttbbbbbbbbb
-bbbbbbbbtbbttbbttbbbbttbbttbbtbbbbbbbbb
-bbbbbbbttbbtbbbtbbttbblbbbtbbttbbbbbbbb
-bbbbbbbttbbtbbbtbbltbbtbbbtbbttbbbbbbbb
-bbbbbbbbtbbttbbttbbbbttbbttbbtbbbbbbbbb
-bbbbbbbbttbbtlbbtbbbbtbbblbbttbbbbbbbbb
-bbbbbbbbbtbbttbbttttttbbttbbttbbbbbbbbb
-bbbbbbbbbttbbtbbbbtlbbbbtbbttbbbbbbbbbb
-bbbbbbbbbblbbtttbbbbbbtttbbtbbbbbbbbbbb
-bbbbbbbbbbttbbbtttbbtttbbbttbbbbbbbbbbb
-bbbbbbbbbbbtttbbbttttbbbttlbbbbbbbbbbbb
-bbbbbbbbbbbbbtttbbbbbbtttbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbttttttttbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`, 
-    map`
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbttttttttbbbbbbbbbbbbbbbb
 bbbbbbbbbbbtltttbbbbbbtttltbbbbbbbbbbbb
@@ -840,18 +783,6 @@ bbbbbbbbbtttbbbbbttttbbbbbtttbbbbbbbbbb
 bbbbbbbbbbbtttttbbbbbbtttttbbbbbbbbbbbb
 bbbbbbbbbbbbbbbttttltttbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`, 
-    map`
-.............
-wwwwwwrwwwwww
-wwwwwwtwwwwww
-wwwwwwewwwwww
-wwwwwwtwwwwww
-wwwwwwgwwwwww
-wwwwwwtwwwwww
-wwwwwwgwwwwww
-wwwwwwswwwwww
-wwwwwwwwwwwww
-.............`, 
   map`
 bbbbbbbbbbbbbbbb
 bbYOUbVEbBEENbbb
@@ -860,23 +791,30 @@ bbABSORBEDbBYbbb
 bbbbbbbbbbbbbbbb
 bTHEbBLACKbHOLEb
 bbbbbbbbbbbbbbbb`, 
+  map`
+bbbbbbbbbbbbbbbbbbbbbbbb`, 
+  map`
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwqwwwwwwwww
+wwwwwwqwwwwwwwww
+wwwwwwewwwwwwwww
+wwwwwwqwwwwwwwww
+wwwwwwgwwwwwwwww
+wwwwwwqwwwwwwwww
+wwwwwwgwwwwwwwww
+wwwwwwxwwwwwwwww
+wwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwww`, 
 ]
 
 let isMuted = false; // Variable to track if any melody is muted
 
 onInput("k", () => {
-  if (isMuted == false) {
-    playback.end(); // Mute all music
+  if (isMuted === false) {
     isMuted = true; // Set the isMuted flag to true
   }
-  // else if (isMuted == true) {
-  //   // playback(); // Unmute all music
-  //   playTune(melody, Infinity);
-  //   // const playback = playTune(melody, Infinity);
-  //   isMuted = false; // Set the isMuted flag to false
-  // }
 })
-
 addText(              "Welcome to the Holy", { y: 3, color: color`7` });
 addText(              "Graph! Try your best", { y: 5, color: color`7` });
 addText(              "to finish the core!", { y: 7, color: color`7` });
@@ -884,8 +822,7 @@ addText(              "Press \"l\" to start", { y: 11, color: color`7` });
 addText(              "Press \"i\" for help", { y: 13, color: color`7` });
 
 onInput("i", () => {
-  if (start_game == false) {
-    start_game = true;
+  if (level === 1) {
     clearText();
     addText(              "Collect all the ", { y: 1, color: color`7` });
     addText(              "projects from the", { y: 3, color: color`7` });
@@ -895,270 +832,196 @@ onInput("i", () => {
     addText(              "Press \"k\" to mute", { y: 12, color: color`7` });
     // addText(              "mute music \\ ", { y: 13, color: color`7` });
     addText(              "Press \"l\" to start", { y: 14, color: color`7` });
-    setMap(levels[level])
+  }
+  else if (level === 3) {
+    clearText();
+    addText(              "Rocket to ", { y: 1, color: color`7` });
+    addText(              "starship", { y: 3, color: color`7` });
+    addText(              "", { y: 5, color: color`7` });
+    addText(              "before", { y: 7, color: color`7` });
+    addText(              "you get blackholed!", { y: 9, color: color`7` });
+    addText(              "Press \"k\" to mute", { y: 12, color: color`7` });
+    // addText(              "mute music \\ ", { y: 13, color: color`7` });
+    addText(              "Press \"l\" to start", { y: 14, color: color`7` });
   }
 })
+
 let start_game = false;
+let start_game2 = false;
+let won = false;
 
 onInput("l", () => {
-  if (start_game == false) {
+  if (start_game === false
+     && all_collected < 4) {
     start_game = true;
-    level = 2
+    level = 1;
     clearText();
     setMap(levels[level])
-    // Spawn a new player sprite at position (0, 0)
+    setBackground("t")
+    setSolids([ student, bg ]);
+    setPushables({
+    [student]: [lvl]
+    });
     addSprite(19, 15, student);
+  }
+  else if (start_game2 === false
+     && all_collected === 4) {
+    start_game2 = true;
+    level = 4;
+    clearText();
+    setMap(levels[level])
+    setSolids([ rocket, blank ]);
+    addSprite(6, 2, rocket);
   }
 })
 
-setBackground("t")
-
-setSolids([ student, bg ]);
-
-setPushables({
-  [student]: [lvl]
-});
-
 onInput("w", () => {
+  if (start_game === true) {
   getFirst(student).y -= 1;
+  }
 });
 
 onInput("a", () => {
+  if (start_game === true) {
   getFirst(student).x -= 1;
+  }
 });
 
 onInput("s", () => {
+  if (start_game === true) {
   getFirst(student).y += 1; 
+  }
 });
 
 onInput("d", () => {
+  if (start_game === true) {
   getFirst(student).x += 1;
+  }
 });
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function example() {
+    console.log("Start");
+    await sleep(5000); // Sleep for 5 seconds
+    console.log("End");
+}
+
+
 
 let all_collected = 0
 let position_x = 0
 let position_y = 0
-let timeLeft = 120; // Set the initial time limit to 120 seconds
-
-// Display the time left on the screen
-
-// Function to update timer every second
+let daysLeft = 100; 
 const timerInterval = setInterval(() => {
-  // Check if the level is 0 and set the timer to 120
-  if (level == 2 && all_collected < 23) {
-    timeLeft -= 1; // Decrement time left by 1 second
-    // Update the displayed time
+  if (daysLeft >= 0 && (level === 1 || level === 4)) {
+    daysLeft -= 1;
     clearText();
-    addText(`Days Left: ${timeLeft+1}`, { x: 3, y: 1, color: color`3` })
+    addText(`Days Left: ${daysLeft+1}`, { x: 3, y: 1, color: color`3` })
   }
-  if (timeLeft < 0 && level < 4) {
-    level = 4; // Set level to 4 if time runs out before reaching level 2
-    setMap(levels[level]); // Load level 4
+  if (daysLeft < 0 && (level === 1 || level === 4)) {
+    level = 2;
+    setMap(levels[level]);
+    start_game = false;
   }
-}, 1000); // Update timer every second
-
-// afterInput(() => {
-//   const targetNumber = tilesWith(lvl).length;
-  
-//   const numberCovered = tilesWith(lvl).length;
-
-//   // addText(numMoves.toString(), {
-//   //   x: 1,
-//   //   y: 14,
-//   //   color: color`3`
-//   // })
-
-//   if (getFirst(player)=== targetNumber) {
-//     playTune(winSFX);
-//     level++;
-//   }
-//   if (numberCovered === 1) {
-//     playTune(winSFX);
-//     level++;
-  
-//   //   clearText();
-    
-//   //   addText(numMoves.toString(), {
-//   //     x: 1,
-//   //     y: 14,
-//   //     color: color`3`
-//     }
-//     // )
-    
-//     const currentLevel = levels[level];
-
-// //     if (currentLevel !== undefined) {
-// //       setMap(currentLevel);
-// //       // Fun hack to start the level with a cheese already on a goal
-// //       if (level == 3) { 
-// //         addSprite(7, 3, "c")
-// //       }
-// //       if (level == 9) {
-// //         addSprite(5, 4, "c")
-// //       }
-// //       if (level == 10) {
-// //         clearText();
-// //       }
-// //     } else {
-// //       clearText();
-// //       addText("you win!", { y: 5, color: color`6` });
-// //     }
-//   // }
-// })
+  if (level === 4 && all_collected == 23) {
+    daysLeft -= 1;
+    clearText();
+    addText(`Days Left: ${daysLeft+1}`, { x: 3, y: 1, color: color`3` })
+    level = 0;
+  }
+}, 1000);
 
 setMap(levels[level])
-
-setPushables({
-  [ student ]: []
-})
-
+setPushables({[ student ]: []})
 
 afterInput(() => {
-  // if (level === 2) {
+
+  if (start_game === true) {
   const playerSprite = getFirst(student)
   const playerX = playerSprite.x
   const playerY = playerSprite.y
-  // const allLevels = getAll(lvl);
-  //   for (const fruit of fruitsInGame) {
-  //     if (fruit.x === playerSprite.x && fruit.y === playerSprite.y) {
-  
   const touchedproject = getTile(playerX, playerY).some(sprite => sprite.type === lvl)
   if (touchedproject) {
     all_collected += 1;
-    // lvl.remove();
-    
-    // removeSprite(touchedProject);
-    position_x = getFirst(student).x;
-    position_y = getFirst(student).y;
-    clearTile(position_x, position_y);
-    addSprite(position_x, position_y, "s");
-    addSprite(position_x, position_y, "p");
-    
+    // position_x = getFirst(student).x;
+    // position_y = getFirst(student).y;
+    // clearTile(position_x, position_y);
+    // // addSprite(position_x, position_y, "s");
+    // addSprite(position_x, position_y, "p");
     if (all_collected === 1) {
-      // getFirst(student).y -= 10; 
-      getFirst(student).x -= 3;
-      // clearText();
+        // getFirst(student).x -= 3;
+      //setMap(levels[level])
+      position_x = getFirst(student).x;
+      position_y = getFirst(student).y;
+      clearTile(position_x, position_y);
+      addSprite(position_x, position_y, player);
+      addSprite(15, 15, student);
       }
-    if (all_collected === 4) {
-     if (position_x === 16 && position_y === 13) //ok
-     {
-      getFirst(student).y -= 0; 
-      getFirst(student).x -= 4;
-     }
-      else if (position_x === 22 && position_y === 15) //ok
-      {
-      // getFirst(student).y += 4; 
-      getFirst(student).x += 4;
-      // clearText();
+    else if (all_collected === 4) {
+      //setMap(levels[level])
+      position_x = getFirst(student).x;
+      position_y = getFirst(student).y;
+      clearTile(position_x, position_y);
+      addSprite(position_x, position_y, player);
+      addSprite(11, 15, student);
       }
-      else if (position_x === 19 && position_y === 20) //ok
-      {
-      getFirst(student).y -= 0; 
-      getFirst(student).x += 5;
-      // clearText();
+    else if (all_collected === 7) {
+      // setMap(levels[level])
+      position_x = getFirst(student).x;
+      position_y = getFirst(student).y;
+      clearTile(position_x, position_y);
+      addSprite(position_x, position_y, "p");
+      addSprite(8, 15, student);
       }
+    else if (all_collected === 11) {
+      // setMap(levels[level])
+      position_x = getFirst(student).x;
+      position_y = getFirst(student).y;
+      clearTile(position_x, position_y);
+      addSprite(position_x, position_y, "p");
+      addSprite(5, 15, student);
       }
-    if (all_collected === 7) {
-     if (position_x === 25 && position_y === 18) //ok
-     {
-      getFirst(student).y -= 0; 
-      getFirst(student).x += 4;
-     }
-     else if (position_x === 13 && position_y === 18) //ok
-     {
-      getFirst(student).y += 0; 
-      getFirst(student).x -= 5;
-      // clearText();
-     }
-     else if (position_x === 17 && position_y === 9) //ok
-      {
-      getFirst(student).y -= 3; 
-      // console.log("Sprites at new position:", getTile(studentSprite.x, studentSprite.y));
-      // getFirst(student).x -= 7;
-      // clearText();
+    else if (all_collected === 18) {
+      // setMap(levels[level])
+      position_x = getFirst(student).x;
+      position_y = getFirst(student).y;
+      clearTile(position_x, position_y);
+      addSprite(position_x, position_y, "p");
+      addSprite(3, 15, student);
       }
-      }
-    if (all_collected === 11) {
-     if (position_x === 10 && position_y === 21) //ok
-     {
-      getFirst(student).y -= 1; 
-      getFirst(student).x -= 3;
-     }
-      else if (position_x === 26 && position_y === 23) //ok
-      {
-      getFirst(student).y -= 1; 
-      getFirst(student).x += 3;
-      // clearText();
-      }
-      else if (position_x === 27 && position_y === 10) //ok
-      {
-      getFirst(student).y -= 0; 
-      getFirst(student).x += 3;
-      // clearText();
-      }
-      else if (position_x === 16 && position_y === 6) //corrected
-      {
-      getFirst(student).y -= 2; 
-      getFirst(student).x -= 2;
-      // clearText();
-      }
-      }
-    if (all_collected === 18) {
-     if (position_x === 9 && position_y === 25) //ok
-     {
-      // getFirst(student).y -= 1; 
-      getFirst(student).x -= 3;
-     }
-      else if (position_x === 26 && position_y === 26) //ok
-      {
-      getFirst(student).y -= 2; 
-      // getFirst(student).x -= 3;
-      // clearText();
-      }
-      else if (position_x === 31 && position_y === 20) //ok
-      {
-      getFirst(student).y -= 0; 
-      getFirst(student).x += 3;
-      // clearText();
-      }
-      else if (position_x === 28 && position_y === 7) //ok
-      {
-      getFirst(student).y -= 0; 
-      getFirst(student).x += 3;
-      // clearText();
-      }
-      else if (position_x === 17 && position_y === 4) //ok
-      {
-      getFirst(student).y -= 2;
-      getFirst(student).x -= 2;
-      // clearText();
-      }
-      else if (position_x === 11 && position_y === 6) //ok
-      {
-      getFirst(student).y -= 3; 
-      // getFirst(student).x += 3;
-      // clearText();
-      }
-      else if (position_x === 6 && position_y === 12) //ok
-      {
-      getFirst(student).y -= 1; 
-      getFirst(student).x -= 3;
-      // clearText();
-      }
-      }
-    
-    // Log the current position of the player sprite
-console.log("Player Position - X:", getFirst(student).x, "Y:", getFirst(student).y);
-    if (all_collected === 23) {
-      level = 0;
-      setMap(levels[level])
-       addText(`Brilliant, \nwhat a fun,\n you're expert!`, { x: 1, y: 6, color: color`4` }) 
-    }
     else {
-    addText(`projects done: ${all_collected} of 23`, { x: 1, y: 14, color: color`2` })
+      position_x = getFirst(student).x;
+      position_y = getFirst(student).y;
+      clearTile(position_x, position_y);
+      addSprite(position_x, position_y, "p");
+      addSprite(position_x, position_y, "s");
     }
-    // addText(`p pos x: ${position_x}`, { x: 1, y: 8, color: color`2` })
-    // addText(`p pos y: ${position_y}`, { x: 1, y: 10, color: color`2` })
-    }
-  // }
+  }
+    // console.log("Player Position - X:", getFirst(student).x, "Y:", getFirst(student).y);
+      if (all_collected === 4) {
+        level = 3;
+        setMap(levels[level])
+        addText(`Brilliant, \nwhat a fun,\nNow show what you\nhave learned...`, { x: 1, y: 4, color: color`8` })
+        addText(              "Press \"i\" for help", { y: 13, color: color`6` });
+        addText(              "Press \"l\" to start", { y: 14, color: color`6` });
+        start_game = false;
+      }
+      else {
+        addText(`projects done: ${all_collected}`, { x: 3, y: 14, color: color`2` })
+      }
+  }
+    else if (start_game2 === true) {   
+        // level = 4;
+        // setMap(levels[level])
+        daysLeft = 60;
+        // start_game2 = true;
+        example();
+        won = true;
+        if (won === true) {
+        addText(`Brilliant,\nyou passed\nthe core\nyou're an expert!\n`, { x: 1, y: 4, color: color`4` })
+        }
+      }
 })
